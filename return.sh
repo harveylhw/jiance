@@ -9,7 +9,7 @@ case $ARCHITECTURE in
   x86_64 )  FILE=besttrace;;
   aarch64 ) FILE=besttracearm;;
   i386 )    FILE=besttracemac;;
-  * ) red " 只支持 AMD64、ARM64、Mac 使用，问题反馈:[https://github.com/fscarmen/tools/issues] " && exit 1;;
+  * ) red " 只支持 AMD64、ARM64、Mac 使用，问题反馈:[https://github.com/harveylhw/issues] " && exit 1;;
 esac
 
 [[ ! -e $FILE ]] && wget -q https://github.com/fscarmen/tools/raw/main/besttrace/$FILE >/dev/null 2>&1
