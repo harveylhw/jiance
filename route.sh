@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ver="2022.09.23"
-changeLog="路由相关工具合集，由频道 https://t.me/vps_reviews 整理修改"
+changeLog="路由相关工具合集，由万海云涛Harvey整理修改"
 
 
 
@@ -162,7 +162,7 @@ checkwget() {
 }
 
 fscarmen_route_script(){
-    echo -e "------------------回程路由--感谢fscarmen开源及PR----------------------"
+    echo -e "------------------回程路由--感谢harvey开源及PR----------------------"
     yellow "以下测试的带宽类型可能有误，商宽可能被判断为家宽，仅作参考使用"
     rm -f $TEMP_FILE
     IP_4=$(curl -s4m5 https:/ip.gs/json) &&
@@ -184,7 +184,7 @@ fscarmen_route_script(){
         x86_64 )  local FILE=besttrace;;
         aarch64 ) local FILE=besttracearm;;
         i386 )    local FILE=besttracemac;;
-        * ) red " 只支持 AMD64、ARM64、Mac 使用，问题反馈:[https://github.com/fscarmen/tools/issues] " && return;;
+        * ) red " 只支持 AMD64、ARM64、Mac 使用，问题反馈:[https://github.com/harveylhw/issues] " && return;;
       esac
 
     [[ ! -e $FILE ]] && wget -q https://github.com/fscarmen/tools/raw/main/besttrace/$FILE >/dev/null 2>&1
@@ -200,7 +200,7 @@ fscarmen_route_script(){
 
 print_intro() {
     echo "--------------------- A Bench Script By spiritlhl --------------------"
-    echo "                   测评频道: https://t.me/vps_reviews                    "
+    echo "                   测评频道: https://t.me/                   "
     echo "版本：$ver"
     echo "更新日志：$changeLog"
 }
@@ -242,11 +242,11 @@ export PYTHONIOENCODING=utf-8
 clear
 start_time=$(date +%s)
 print_intro
-echo -e "-----------------三网回程--感谢zhanghanyun/backtrace开源--------------"
+echo -e "-----------------三网回程--感谢Harvey开源--------------"
 rm -f $TEMP_FILE2
 curl https://raw.githubusercontent.com/zhanghanyun/backtrace/main/install.sh -sSf | sh
 fscarmen_route_script
-echo -e "-----------------测端口开通--感谢fscarmen开源及PR----------------------"
+echo -e "-----------------测端口开通--感谢Harvey开源及PR----------------------"
 if [ -n "$IP_4" ]; then
   PORT4=(22 80 443 8080)
   for i in ${PORT4[@]}; do
