@@ -1,6 +1,6 @@
 # ecs
 
-### 融合怪测评脚本
+### Harvey测评脚本
 
 ```bash
 bash <(wget -qO- --no-check-certificate https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh)
@@ -75,7 +75,7 @@ lemonbench测试中的IO读写有时候过高脱离实际，修复时间未知
 
 # 测评频道
 
-# https://t.me/vps_reviews
+# https://t.me
 
 # 脚本概况
 
