@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ver="2022.10.17"
-changeLog="融合怪九代目(集合百家之长)(专为测评频道小鸡而生)"
+changeLog="Harvey"
 
 UA_Browser="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36"
 test_area_g=("广州电信" "广州联通" "广州移动")
@@ -1983,7 +1983,7 @@ latency() {
 chinaping() {
     # start=$(date +%s)
     # echostyle "++ China Latency Test"
-    echo "-------------------延迟测试--感谢ipasn开源本人整理---------------------" | tee -a $LOG
+    echo "-------------------延迟测试--感谢Harvey整理---------------------" | tee -a $LOG
     declare -a LIST
     LIST[${#LIST[@]}]="ec2.cn-north-1.amazonaws.com.cn•北京, Amazon Cloud"
     LIST[${#LIST[@]}]="ec2.cn-northwest-1.amazonaws.com.cn•宁夏, Amazon Cloud"
@@ -2151,7 +2151,7 @@ pre_check(){
 
 sjlleo_script(){
     cd /root >/dev/null 2>&1
-    echo "--------------------流媒体解锁--感谢sjlleo开源-------------------------"
+    echo "--------------------流媒体解锁--感谢Harvey开源-------------------------"
     yellow "以下测试的解锁地区是准确的，但是不是完整解锁的判断可能有误，这方面仅作参考使用"
     yellow "Youtube"
     ./tubecheck | sed "/@sjlleo/d"
@@ -2167,20 +2167,20 @@ sjlleo_script(){
 
 basic_script(){
     
-    echo "-----------------感谢teddysun和misakabench和yabs开源-------------------"
+    echo "-----------------感谢Harvey开源-------------------"
     print_system_info
     ipv4_info
     cd /root >/dev/null 2>&1
-    echo "-------------------CPU测试--感谢lemonbench开源------------------------"
+    echo "-------------------CPU测试--感谢Harvey开源------------------------"
     Entrance_SysBench_CPU_Fast
     cd /root >/dev/null 2>&1
-    echo "-------------------内存测试--感谢lemonbench开源-----------------------"
+    echo "-------------------内存测试--感谢Harvey开源-----------------------"
     Entrance_SysBench_Memory_Fast
 }
 
 io1_script(){
     cd /root >/dev/null 2>&1
-    echo "----------------磁盘IO读写测试--感谢lemonbench开源--------------------"
+    echo "----------------磁盘IO读写测试--感谢Harvey开源--------------------"
     Entrance_DiskTest_Fast
     # Function_GenerateResult
     Global_Exit_Action >/dev/null 2>&1
@@ -2188,14 +2188,14 @@ io1_script(){
 
 io2_script(){
     
-    echo "-------------------磁盘IO读写测试--感谢yabs开源-----------------------"
+    echo "-------------------磁盘IO读写测试--感谢Harvey开源-----------------------"
     bash ./yabsiotest.sh 
     rm -rf yabsiotest.sh
 }
 
 RegionRestrictionCheck_script(){
     
-    echo -e "---------------流媒体解锁--感谢RegionRestrictionCheck开源-------------"
+    echo -e "---------------流媒体解锁--感谢Harvey开源-------------"
     yellow " 以下为IPV4网络测试"
     Global_UnlockTest 4
     yellow " 以下为IPV6网络测试"
@@ -2204,7 +2204,7 @@ RegionRestrictionCheck_script(){
 
 lmc999_script(){
     cd /root >/dev/null 2>&1
-    echo -e "-------------TikTok解锁--感谢lmc999加密脚本及fscarmen PR--------------"
+    echo -e "-------------TikTok解锁--感谢Harvey--------------"
     local Ftmpresult=$(curl $useNIC --user-agent "${UA_Browser}" -s --max-time 10 "https://www.tiktok.com/")
 
     if [[ "$Ftmpresult" = "curl"* ]]; then
@@ -2232,21 +2232,21 @@ lmc999_script(){
 
 spiritlhl_script(){
     cd /root >/dev/null 2>&1
-    echo -e "------------------欺诈分数以及IP质量检测--本频道原创-------------------"
+    echo -e "------------------欺诈分数以及IP质量检测--Harvey-------------------"
     yellow "得分仅作参考，不代表100%准确"
     python3 qzcheck_ecs.py 
 }
 
 backtrace_script(){
     
-    echo -e "-----------------三网回程--感谢zhanghanyun/backtrace开源--------------"
+    echo -e "-----------------三网回程--感谢Harvey开源--------------"
     rm -f $TEMP_FILE2
     curl https://raw.githubusercontent.com/zhanghanyun/backtrace/main/install.sh -sSf | sh
 }
 
 
 fscarmen_route_g_script(){
-    echo -e "------------------回程路由--感谢fscarmen开源及PR----------------------"
+    echo -e "------------------回程路由--感谢Harvey开源及PR----------------------"
     yellow "以下测试的带宽类型可能有误，商宽可能被判断为家宽，仅作参考使用"
     rm -f $TEMP_FILE
     IP_4=$(curl -s4m5 https:/ip.gs/json) &&
@@ -2268,7 +2268,7 @@ fscarmen_route_g_script(){
         x86_64 )  local FILE=besttrace;;
         aarch64 ) local FILE=besttracearm;;
         i386 )    local FILE=besttracemac;;
-        * ) red " 只支持 AMD64、ARM64、Mac 使用，问题反馈:[https://github.com/fscarmen/tools/issues] " && return;;
+        * ) red " 只支持 AMD64、ARM64、Mac 使用，问题反馈:[https://github.com/Harveylhw/issues] " && return;;
       esac
 
     [[ ! -e $FILE ]] && wget -q https://github.com/fscarmen/tools/raw/main/besttrace/$FILE >/dev/null 2>&1
@@ -2283,7 +2283,7 @@ fscarmen_route_g_script(){
 }
 
 fscarmen_route_s_script(){
-    echo -e "------------------回程路由--感谢fscarmen开源及PR----------------------"
+    echo -e "------------------回程路由--感谢Harvey开源及PR----------------------"
     yellow "以下测试的带宽类型可能有误，商宽可能被判断为家宽，仅作参考使用"
     rm -f $TEMP_FILE
     IP_4=$(curl -s4m5 https:/ip.gs/json) &&
@@ -2305,7 +2305,7 @@ fscarmen_route_s_script(){
         x86_64 )  local FILE=besttrace;;
         aarch64 ) local FILE=besttracearm;;
         i386 )    local FILE=besttracemac;;
-        * ) red " 只支持 AMD64、ARM64、Mac 使用，问题反馈:[https://github.com/fscarmen/tools/issues] " && return;;
+        * ) red " 只支持 AMD64、ARM64、Mac 使用，问题反馈:[https://github.com/Harveylhw/issues] " && return;;
       esac
 
     [[ ! -e $FILE ]] && wget -q https://github.com/fscarmen/tools/raw/main/besttrace/$FILE >/dev/null 2>&1
@@ -2320,7 +2320,7 @@ fscarmen_route_s_script(){
 }
 
 fscarmen_route_b_script(){
-    echo -e "------------------回程路由--感谢fscarmen开源及PR----------------------"
+    echo -e "------------------回程路由--感谢Harvey开源及PR----------------------"
     yellow "以下测试的带宽类型可能有误，商宽可能被判断为家宽，仅作参考使用"
     rm -f $TEMP_FILE
     IP_4=$(curl -s4m5 https:/ip.gs/json) &&
@@ -2358,7 +2358,7 @@ fscarmen_route_b_script(){
 
 
 fscarmen_port_script(){
-    echo -e "-----------------测端口开通--感谢fscarmen开源及PR----------------------"
+    echo -e "-----------------测端口开通--感谢Harvey开源及PR----------------------"
     IP_4=$(curl -s4m5 https:/ip.gs/json)
     sleep 0.5
     if [ -n "$IP_4" ]; then
@@ -2378,7 +2378,7 @@ fscarmen_port_script(){
 }
 
 superspeed_all_script(){
-    echo "--------网络测速--由teddysun和superspeed开源及spiritlhls整理----------"
+    echo "--------网络测速--由Harvey和superspeed开源及spiritlhls整理----------"
     sleep 0.5
     echo -e "测速点位置\t 上传速度\t 下载速度\t 延迟"
     speed && rm -fr speedtest-cli
@@ -2728,14 +2728,14 @@ Yuanchuang_script(){
 head_script(){
     clear
     echo "#############################################################"
-    echo -e "#                     ${YELLOW}融合怪测评脚本${PLAIN}                        #"
+    echo -e "#                     ${YELLOW}Harvey测评脚本${PLAIN}                        #"
     echo "# 版本：$ver                                          #"
     echo "# 更新日志：$changeLog#"
-    echo -e "# ${GREEN}作者${PLAIN}: spiritlhl                                           #"
-    echo -e "# ${GREEN}测评站点${PLAIN}: https://vps.spiritysdx.top                      #"
-    echo -e "# ${GREEN}TG频道${PLAIN}: https://t.me/vps_reviews                          #"
-    echo -e "# ${GREEN}GitHub${PLAIN}: https://github.com/spiritLHLS                     #"
-    echo -e "# ${GREEN}GitLab${PLAIN}: https://gitlab.com/spiritysdx                     #"
+    echo -e "# ${GREEN}作者${PLAIN}: Harvey                                           #"
+    echo -e "# ${GREEN}测评站点${PLAIN}: https://vps                                 #"
+    echo -e "# ${GREEN}TG频道${PLAIN}: https://t.me/                                 #"
+    echo -e "# ${GREEN}GitHub${PLAIN}: https://github.com/Harvey                     #"
+    echo -e "# ${GREEN}GitLab${PLAIN}: https://gitlab.com/Harvey                     #"
     echo "#############################################################"
     echo ""
     green "请选择你接下来测评的组合或单项"
